@@ -22,11 +22,7 @@ namespace UnitTest
 
         TEST_METHOD(TestRecursiveProcessArray)
         {
-            int myArray[25] = { 20, 25, 30, 35, 40, 
-                45, 50, 55, 60, 65, 70, 
-                75, 80, 85, 90, 95, 100, 
-                105, 110, 115, 120, 125, 
-                130, 135, 140 };
+            int myArray[25] = { 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 125, 130, 135, 140 };
             int count = 0, sum = 0;
 
             processArrayRecursive(myArray, 0, count, sum);
