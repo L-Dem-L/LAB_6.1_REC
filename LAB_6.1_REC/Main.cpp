@@ -2,19 +2,15 @@
 #include <cstdlib>
 #include <ctime>
 
-const int ARRAY_SIZE = 25;
-const int LOWER_BOUND = 15;
-const int UPPER_BOUND = 94;
-
 void fillArray(int arr[], int index = 0) {
-    if (index < ARRAY_SIZE) {
-        arr[index] = rand() % (UPPER_BOUND - LOWER_BOUND + 1) + LOWER_BOUND;
+    if (index < 25) {
+        arr[index] = rand() % (94 - 15 + 1) + 15;
         fillArray(arr, index + 1);
     }
 }
 
 void printArray(const int arr[], int index = 0) {
-    if (index < ARRAY_SIZE) {
+    if (index < 25) {
         std::cout << arr[index] << " ";
         printArray(arr, index + 1);
     }
@@ -24,7 +20,7 @@ void printArray(const int arr[], int index = 0) {
 }
 
 void processArrayRecursive(int arr[], int index, int& count, int& sum) {
-    if (index < ARRAY_SIZE) {
+    if (index < 25) {
         if (index % 2 != 0 && index % 13 != 0) {
             count++;
             sum += arr[index];
@@ -43,7 +39,7 @@ void processArray(int arr[], int& count, int& sum) {
 int main() {
     std::srand(std::time(0));
 
-    int myArray[ARRAY_SIZE];
+    int myArray[25];
     int count, sum;
 
     fillArray(myArray);

@@ -12,17 +12,21 @@ namespace UnitTest
 
         TEST_METHOD(TestFillArray)
         {
-            int myArray[ARRAY_SIZE];
+            int myArray[25];
             fillArray(myArray);
 
-            for (int i = 0; i < ARRAY_SIZE; ++i) {
-                Assert::IsTrue(myArray[i] >= LOWER_BOUND && myArray[i] <= UPPER_BOUND);
+            for (int i = 0; i < 25; ++i) {
+                Assert::IsTrue(myArray[i] >= 15 && myArray[i] <= 94);
             }
         }
 
         TEST_METHOD(TestRecursiveProcessArray)
         {
-            int myArray[ARRAY_SIZE] = { 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 125, 130, 135, 140 };
+            int myArray[25] = { 20, 25, 30, 35, 40, 
+                45, 50, 55, 60, 65, 70, 
+                75, 80, 85, 90, 95, 100, 
+                105, 110, 115, 120, 125, 
+                130, 135, 140 };
             int count = 0, sum = 0;
 
             processArrayRecursive(myArray, 0, count, sum);
@@ -30,7 +34,7 @@ namespace UnitTest
             Assert::AreEqual(11, count);
             Assert::AreEqual(875, sum);
 
-            for (int i = 0; i < ARRAY_SIZE; ++i) {
+            for (int i = 0; i < 25; ++i) {
                 if (i % 2 != 0 && i % 13 != 0) {
                     Assert::AreEqual(0, myArray[i]);
                 }
