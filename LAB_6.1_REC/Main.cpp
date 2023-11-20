@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include <iomanip>
 
 void fillArray(int arr[], int index = 0) {
     if (index < 25) {
@@ -11,7 +12,7 @@ void fillArray(int arr[], int index = 0) {
 
 void printArray(const int arr[], int index = 0) {
     if (index < 25) {
-        std::cout << arr[index] << " ";
+        std::cout << std::setw(4) << arr[index];
         printArray(arr, index + 1);
     }
     else {
@@ -21,7 +22,7 @@ void printArray(const int arr[], int index = 0) {
 
 void processArrayRecursive(int arr[], int index, int& count, int& sum) {
     if (index < 25) {
-        if (index % 2 != 0 && index % 13 != 0) {
+        if (!(arr[index] % 2 == 0 && index % 13 == 0)) {
             count++;
             sum += arr[index];
             arr[index] = 0;
@@ -47,10 +48,10 @@ int main() {
     printArray(myArray);
 
     processArray(myArray, count, sum);
-    std::cout << "Count of elements satisfying the criteria: " << count << std::endl;
-    std::cout << "Sum of elements satisfying the criteria: " << sum << std::endl;
     std::cout << "Modified Array: ";
     printArray(myArray);
+    std::cout << "Count of elements satisfying the criteria: " << count << std::endl;
+    std::cout << "Sum of elements satisfying the criteria: " << sum << std::endl;
 
     return 0;
 }

@@ -27,11 +27,11 @@ namespace UnitTest
 
             processArrayRecursive(myArray, 0, count, sum);
 
-            Assert::AreEqual(11, count);
-            Assert::AreEqual(875, sum);
+            Assert::AreEqual(24, count);
+            Assert::AreEqual(1980, sum);
 
             for (int i = 0; i < 25; ++i) {
-                if (i % 2 != 0 && i % 13 != 0) {
+                if (!(myArray[i] % 2 == 0 && i % 13 == 0)) {
                     Assert::AreEqual(0, myArray[i]);
                 }
             }
